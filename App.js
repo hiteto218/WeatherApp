@@ -7,28 +7,34 @@
  */
 
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.header}>
-        <Text style={styles.header_title}>Tube Pick</Text>
-      </View>
+      <SafeAreaView style={styles.safeAreaView}>
+        <View style={styles.header}>
+          <Text style={styles.header_title}>Tube Pick</Text>
+        </View>
+      </SafeAreaView>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  safeAreaView: {
+    flex: 1,
+    backgroundColor: '#e74c3c'
+  },
   header_title: {
     fontSize: 24,
     color: '#282828',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontWeight: '600'
   },
   header: {
     justifyContent: 'center',
-    backgroundColor: '#e74c3c',
-    paddingTop: 40,
+    backgroundColor: '#e74c3c'
   }
 });
